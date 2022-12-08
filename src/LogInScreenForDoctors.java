@@ -32,7 +32,7 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
         ssnField = new javax.swing.JTextField();
         passwordField = new javax.swing.JTextField();
         loginButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        message = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 51));
@@ -70,9 +70,8 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("Wrong SSN or Password");
+        message.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        message.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,7 +93,7 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ssnField)
                             .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(message, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,8 +112,8 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addComponent(message)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,11 +133,22 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
     private void ssnFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssnFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ssnFieldActionPerformed
-
+    
+    Operation op = new Operation();
+    
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
+        message.setText("");
         String ssn = ssnField.getText();
         String password = passwordField.getText();
+        
+        boolean result = op.login(ssn,password);
+        if(result){
+            message.setText("Login Succesfull");
+        }
+        else{
+            message.setText("Wrong SSN or Password...");
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
@@ -181,9 +191,9 @@ public class LogInScreenForDoctors extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
+    private javax.swing.JLabel message;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField ssnField;
     // End of variables declaration//GEN-END:variables

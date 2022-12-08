@@ -70,7 +70,7 @@
                               <Component id="passwordField" pref="130" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel4" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="message" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="134" max="32767" attributes="0"/>
               </Group>
@@ -94,8 +94,8 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="loginButton" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <Component id="message" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -159,7 +159,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="message">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Rockwell Condensed" size="12" style="1"/>
@@ -167,7 +167,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Wrong SSN or Password"/>
           </Properties>
         </Component>
       </SubComponents>
